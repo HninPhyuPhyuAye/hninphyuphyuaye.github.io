@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hnin Phyu Phyu Aye · Computer Engineer</title>
-<meta name="description" content="Hnin Phyu Phyu Aye — Computer Engineering graduate from Singapore Polytechnic. Software, IoT & Cloud. Portfolio with a Demon Slayer / Nezuko vibe." />
+<meta name="description" content="Hnin Phyu Phyu Aye — Computer Engineering graduate from Singapore Polytechnic. Software, IoT & Cloud portfolio." />
 <meta name="author" content="Hnin Phyu Phyu Aye" />
 <meta property="og:title" content="Hnin Phyu Phyu Aye · Computer Engineer" />
 <meta property="og:description" content="Software · IoT · Cloud — Computer Engineering graduate, Singapore Polytechnic." />
@@ -13,12 +13,12 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&family=Yuji+Syuku&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 /* ============================================================
-   NEZUKO / DEMON SLAYER PORTFOLIO  —  Hnin Phyu Phyu Aye
-   Palette: Nezuko kimono pink, gradient-haori, bamboo green,
-   demon-night dark. Falling sakura, slash reveals, bouncy motion.
+   PORTFOLIO  —  Hnin Phyu Phyu Aye
+   Palette: expressive pinks, warm amber, bamboo green,
+   and deep night tones. Falling petals, slash reveals, bouncy motion.
    ============================================================ */
 
 :root{
@@ -26,7 +26,7 @@
   --pink-bright: #ff5e93;
   --rose:        #e23e6b;
   --coral:       #ff9a76;
-  --amber:       #ffba63;   /* Nezuko hair tips */
+  --amber:       #ffba63;
   --bamboo:      #86c79a;
   --bamboo-deep: #4f9268;
   --night:       #140d18;
@@ -60,7 +60,7 @@ ul{list-style:none}
 
 /* ---------- decorative background layers ---------- */
 .bg-fixed{position:fixed;inset:0;z-index:-3;pointer-events:none}
-/* asanoha (hemp-leaf) lattice — Nezuko's kimono pattern, very faint */
+/* subtle geometric lattice, very faint */
 .bg-asanoha{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='140' viewBox='0 0 80 140'%3E%3Cg fill='none' stroke='%23ff8fb1' stroke-width='1' stroke-opacity='0.5'%3E%3Cpath d='M40 0 L40 35 M40 35 L10 52 M40 35 L70 52 M40 35 L40 70 M10 52 L40 70 M70 52 L40 70 M10 52 L10 88 M70 52 L70 88 M40 70 L10 88 M40 70 L70 88 M40 70 L40 105 M10 88 L40 105 M70 88 L40 105 M40 105 L40 140'/%3E%3C/g%3E%3C/svg%3E");
   opacity:.05;
@@ -98,7 +98,7 @@ ul{list-style:none}
   box-shadow:0 0 6px rgba(255,143,177,.5);
 }
 
-/* ---------- preloader: Nezuko "Exploding Blood" (爆血) attack ---------- */
+/* ---------- preloader: energetic portfolio reveal ---------- */
 #loader{position:fixed;inset:0;z-index:9999;overflow:hidden;
   transition:opacity .5s ease,visibility .5s ease}
 #loader.gone{opacity:0;visibility:hidden}
@@ -128,8 +128,8 @@ ul{list-style:none}
   align-items:center;justify-content:center;gap:20px;
   transition:opacity .3s ease,transform .3s ease}
 #loader.split .ldr-stage{opacity:0;transform:scale(1.3)}
-.ldr-kanji{position:relative;font-family:'Yuji Syuku',serif;font-weight:700;line-height:1;
-  font-size:clamp(4rem,17vw,9rem);letter-spacing:.04em;
+.ldr-title{position:relative;font-family:'Zen Maru Gothic',sans-serif;font-weight:900;line-height:1;
+  font-size:clamp(3.2rem,12vw,6.8rem);letter-spacing:.04em;
   background:linear-gradient(180deg,#fff0f5,#ff8fb1 34%,#ff3d77 70%,#ff7e4d);
   -webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 0 26px rgba(255,61,119,.75));
@@ -138,7 +138,7 @@ ul{list-style:none}
   55%{opacity:1;transform:scale(1.22) rotate(3deg)}100%{transform:scale(1) rotate(0)}}
 @keyframes ldrFlick{0%,100%{filter:drop-shadow(0 0 26px rgba(255,61,119,.7))}
   50%{filter:drop-shadow(0 0 52px rgba(255,61,119,1))}}
-.ldr-sub{font-family:'Yuji Syuku',serif;font-size:clamp(1rem,3vw,1.45rem);letter-spacing:.3em;
+.ldr-sub{font-family:'Poppins',sans-serif;font-size:clamp(1rem,3vw,1.45rem);letter-spacing:.3em;
   color:var(--amber);opacity:0;animation:fadeUp .7s .7s var(--ease-bounce) forwards}
 .ldr-bar{width:min(240px,60vw);height:4px;border-radius:4px;overflow:hidden;
   background:rgba(255,143,177,.18);opacity:0;animation:fadeUp .6s .85s ease forwards}
@@ -169,7 +169,7 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
 .brand{display:flex;align-items:center;gap:10px;font-family:'Zen Maru Gothic',sans-serif;
   font-weight:900;font-size:1.05rem;letter-spacing:.02em}
 .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--haori);
-  display:grid;place-items:center;color:#fff;font-family:'Yuji Syuku',serif;
+  display:grid;place-items:center;color:#fff;font-family:'Zen Maru Gothic',sans-serif;
   box-shadow:var(--glow);transform:rotate(-6deg)}
 .brand .name{background:var(--haori);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav-links{display:flex;gap:6px;align-items:center}
@@ -206,7 +206,7 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   padding:clamp(70px,11vw,130px) clamp(20px,5vw,40px)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:600;
   letter-spacing:.32em;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
-.eyebrow .jp{font-family:'Yuji Syuku',serif;letter-spacing:.1em;color:var(--amber);font-size:.95rem}
+.eyebrow .accent{font-family:'Zen Maru Gothic',sans-serif;letter-spacing:.14em;color:var(--amber);font-size:.82rem}
 .section-title{font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
   font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.1;margin-bottom:18px}
 .section-title .grad{background:var(--haori);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -224,7 +224,7 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   padding:120px clamp(20px,5vw,40px) 70px;max-width:1200px;margin:0 auto}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,6vw,70px);
   align-items:center;width:100%}
-.hero-jp{font-family:'Yuji Syuku',serif;font-size:1rem;letter-spacing:.5em;color:var(--amber);
+.hero-kicker{font-family:'Zen Maru Gothic',sans-serif;font-size:1rem;letter-spacing:.34em;color:var(--amber);
   margin-bottom:18px;opacity:0;animation:fadeUp .9s .2s var(--ease-bounce) forwards}
 .hero h1{font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
   font-size:clamp(2.7rem,8vw,5rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:8px}
@@ -300,10 +300,10 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
 .about-photo .frame2 img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}
 .about-photo:hover .frame2{transform:rotate(1.5deg) scale(1.05) translateY(-6px)}
 .about-photo .frame2-cap{position:absolute;left:0;right:0;bottom:5px;text-align:center;
-  font-family:'Yuji Syuku',serif;font-size:.82rem;color:#c0356b}
+  font-family:'Poppins',sans-serif;font-size:.82rem;color:#c0356b}
 .about-photo .tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);
   background:rgba(255,186,99,.25);border:1px solid rgba(255,186,99,.4);
-  padding:6px 22px;font-family:'Yuji Syuku',serif;font-size:.95rem;color:var(--amber);
+  padding:6px 22px;font-family:'Poppins',sans-serif;font-size:.9rem;color:var(--amber);
   border-radius:4px;backdrop-filter:blur(2px)}
 .about-text p{color:var(--muted);margin-bottom:18px}
 .about-text strong{color:var(--cream);font-weight:600}
@@ -365,7 +365,7 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   transition:opacity .5s,transform .5s}
 .proj-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,.55)}
 .proj-card:hover .glow{opacity:.42;transform:scale(1.3)}
-.proj-card .num{font-family:'Yuji Syuku',serif;font-size:.85rem;color:var(--amber);
+.proj-card .num{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:600;color:var(--amber);
   letter-spacing:.2em;margin-bottom:14px}
 .proj-card h3{font-family:'Zen Maru Gothic',sans-serif;font-size:1.35rem;margin-bottom:10px;line-height:1.25}
 .proj-card p{color:var(--muted);font-size:.93rem;flex:1}
@@ -407,7 +407,7 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
 /* ---------- footer ---------- */
 footer{position:relative;z-index:2;text-align:center;padding:50px 20px 40px;
   border-top:1px solid var(--line);margin-top:40px}
-footer .fjp{font-family:'Yuji Syuku',serif;font-size:1.5rem;
+footer .footer-mark{font-family:'Zen Maru Gothic',sans-serif;font-size:1.5rem;font-weight:900;
   background:var(--haori);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
 footer p{color:var(--muted-2);font-size:.85rem}
 footer .heart{color:var(--pink-bright)}
@@ -461,7 +461,7 @@ footer .heart{color:var(--pink-bright)}
 <div id="embers"></div>
 <div id="sakura" aria-hidden="true"></div>
 
-<!-- preloader: Nezuko "Exploding Blood" attack -->
+<!-- preloader: energetic portfolio reveal -->
 <div id="loader" aria-hidden="true">
   <div class="ldr-half top"></div>
   <div class="ldr-half bot"></div>
@@ -470,17 +470,17 @@ footer .heart{color:var(--pink-bright)}
   <div class="ldr-stage">
     <div class="ldr-ring"></div>
     <div class="ldr-ring r2"></div>
-    <div class="ldr-kanji">爆血</div>
-    <div class="ldr-sub">全集中 ・ 爆血</div>
+    <div class="ldr-title">Portfolio</div>
+    <div class="ldr-sub">Software · IoT · Cloud</div>
     <div class="ldr-bar"><span></span></div>
-    <div class="ldr-label">Exploding Blood — entering</div>
+    <div class="ldr-label">Loading experience</div>
   </div>
 </div>
 
 <!-- nav -->
 <nav id="nav">
   <a href="#home" class="brand">
-    <span class="mark">禰</span>
+    <span class="mark">HP</span>
     <span class="name">Hnin&nbsp;Phyu&nbsp;Phyu&nbsp;Aye</span>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -498,13 +498,13 @@ footer .heart{color:var(--pink-bright)}
 <header class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-copy">
-      <div class="hero-jp">鬼滅の意志 · 全集中</div>
+      <div class="hero-kicker">Software · IoT · Cloud Systems</div>
       <h1>
         <span class="l1">Hi, I'm</span>
         <span class="l2">Hnin Phyu Phyu Aye</span>
       </h1>
       <div class="role">Computer Engineer · Software · IoT · Cloud</div>
-      <p class="tag">A Computer Engineering graduate from Singapore Polytechnic who builds across software, IoT and cloud — turning sensors, code and ideas into reliable systems. Total concentration, breathing form: <em>build</em>.</p>
+      <p class="tag">A Computer Engineering graduate from Singapore Polytechnic who builds across software, IoT and cloud — turning sensors, code and ideas into reliable systems with focus and care.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work ✦</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -534,11 +534,11 @@ footer .heart{color:var(--pink-bright)}
 <section class="section" id="about">
   <div class="about-grid">
     <div class="about-photo reveal">
-      <span class="tape">縁 · connection</span>
+      <span class="tape">Focused systems builder</span>
       <div class="frame"><img src="assets/pf-me.jpeg" alt="Hnin Phyu Phyu Aye portrait" /></div>
     </div>
     <div class="about-text">
-      <div class="eyebrow reveal">About Me <span class="jp">紹介</span></div>
+      <div class="eyebrow reveal">About Me <span class="accent">Profile</span></div>
       <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Engineer by craft,</span></span><br/>curious by nature.</h2>
       <p class="reveal d2">I'm a <strong>Computer Engineering graduate</strong> from Singapore Polytechnic with hands-on experience in software development, web applications, cloud technologies, IoT systems, and software–hardware integration.</p>
       <p class="reveal d3">From deploying industrial IoT sensors to building cloud dashboards and full-stack web apps, I love the moment where <strong>code meets the real world</strong>. I bring strong analytical thinking, attention to detail, and a fast-learner mindset to every system I touch.</p>
@@ -555,9 +555,9 @@ footer .heart{color:var(--pink-bright)}
 
 <!-- skills -->
 <section class="section" id="skills">
-  <div class="eyebrow reveal">Total Concentration <span class="jp">技</span></div>
-  <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Breathing Styles</span></span> &amp; Skills</h2>
-  <p class="section-intro reveal d2">The forms I've mastered across the stack — from low-level embedded systems to the cloud.</p>
+  <div class="eyebrow reveal">Core Capabilities <span class="accent">Skills</span></div>
+  <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Technical Strengths</span></span> &amp; Skills</h2>
+  <p class="section-intro reveal d2">The tools and technologies I use across the stack — from embedded systems to cloud platforms.</p>
   <div class="skills-grid">
     <div class="skill-card reveal">
       <div class="ic">💻</div>
@@ -596,9 +596,9 @@ footer .heart{color:var(--pink-bright)}
 
 <!-- experience -->
 <section class="section" id="experience">
-  <div class="eyebrow reveal">The Journey <span class="jp">歩み</span></div>
+  <div class="eyebrow reveal">Professional Journey <span class="accent">Experience</span></div>
   <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Experience</span></span> &amp; Path</h2>
-  <p class="section-intro reveal d2">Where I've sharpened my blade — real systems, real teams, real impact.</p>
+  <p class="section-intro reveal d2">Hands-on work with real systems, real teams and practical impact.</p>
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-card">
@@ -655,34 +655,34 @@ footer .heart{color:var(--pink-bright)}
 
 <!-- projects -->
 <section class="section" id="projects">
-  <div class="eyebrow reveal">Forged Works <span class="jp">作品</span></div>
+  <div class="eyebrow reveal">Selected Work <span class="accent">Projects</span></div>
   <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Projects</span></span> I've Built</h2>
   <p class="section-intro reveal d2">A selection of academic and personal builds — spanning full-stack web, IoT and cloud.</p>
   <div class="proj-grid">
     <article class="proj-card reveal">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">壱 · 01</div>
+      <div class="num">Project · 01</div>
       <h3><a href="https://github.com/HninPhyuPhyuAye/SPPals" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">SP Pals ↗</a></h3>
       <p>A centralised social-media application connecting students — profiles, posts and community feeds in one place.</p>
       <div class="stack"><span>Full-Stack</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
     </article>
     <article class="proj-card reveal d1">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">弐 · 02</div>
+      <div class="num">Project · 02</div>
       <h3><a href="https://github.com/HninPhyuPhyuAye/Cinechase" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">CineChase ↗</a></h3>
       <p>A movie ticketing &amp; merchandise website with browsing, booking and an online store experience.</p>
       <div class="stack"><span>Web App</span><span>HTML/CSS</span><span>JS</span><span>Database</span></div>
     </article>
     <article class="proj-card reveal d2">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">参 · 03</div>
+      <div class="num">Project · 03</div>
       <h3><a href="https://youtu.be/f3zkNs22oMY?si=0OLqf2NhBUPxEKJJ" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Smart Fan System ↗</a></h3>
       <p>A sustainable, sensor-controlled cooling system that adapts automatically to environmental conditions.</p>
       <div class="stack"><span>IoT</span><span>Arduino</span><span>Sensors</span><span>C++</span></div>
     </article>
     <article class="proj-card reveal d3">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">肆 · 04</div>
+      <div class="num">Project · 04</div>
       <h3><a href="https://github.com/HninPhyuPhyuAye/Sensor-Risk-Identification-and-Proactive-Monitoring-System" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Risk Identification System ↗</a></h3>
       <p>An IoT monitoring solution with an interactive cloud dashboard for real-time risk detection and alerts.</p>
       <div class="stack"><span>IoT</span><span>AWS Cloud</span><span>Dashboard</span><span>Python</span></div>
@@ -694,7 +694,7 @@ footer .heart{color:var(--pink-bright)}
 
 <!-- awards / certifications -->
 <section class="section" id="awards">
-  <div class="eyebrow reveal">Honours <span class="jp">栄誉</span></div>
+  <div class="eyebrow reveal">Achievements <span class="accent">Awards</span></div>
   <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Certifications</span></span> &amp; Awards</h2>
   <p class="section-intro reveal d2">Marks of mastery earned along the way.</p>
   <div class="cert-grid">
@@ -719,7 +719,7 @@ footer .heart{color:var(--pink-bright)}
 
 <!-- contact -->
 <section class="section contact" id="contact">
-  <div class="eyebrow reveal" style="justify-content:center">Let's Connect <span class="jp">絆</span></div>
+  <div class="eyebrow reveal" style="justify-content:center">Let's Connect <span class="accent">Contact</span></div>
   <h2 class="section-title reveal d1"><span class="grad">Let's build something together</span></h2>
   <p class="contact-sub reveal d2">Open to software, IoT and cloud opportunities. Whether it's a project, a role or just a hello — my inbox is always open.</p>
   <div class="contact-grid">
@@ -739,8 +739,8 @@ footer .heart{color:var(--pink-bright)}
 </section>
 
 <footer>
-  <div class="fjp">禰豆子の意志</div>
-  <p>Designed &amp; built with <span class="heart">❤</span> and a little Demon Slayer spirit · © 2026 Hnin Phyu Phyu Aye</p>
+  <div class="footer-mark">Built with focus and care</div>
+  <p>Designed &amp; built with <span class="heart">❤</span> · © 2026 Hnin Phyu Phyu Aye</p>
 </footer>
 
 <button id="top" aria-label="Back to top">↑</button>
@@ -750,7 +750,7 @@ footer .heart{color:var(--pink-bright)}
   "use strict";
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- preloader: Nezuko "Exploding Blood" attack ---- */
+  /* ---- preloader: energetic portfolio reveal ---- */
   var loader = document.getElementById('loader');
   function unlock(){ document.body.classList.remove('lock'); }
   function finishLoader(){ loader.classList.add('gone'); unlock(); }

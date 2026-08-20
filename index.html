@@ -376,6 +376,28 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   opacity:.0;transition:transform .6s var(--ease-bounce);z-index:0;pointer-events:none;mix-blend-mode:overlay}
 .proj-card:hover .slash{transform:translateX(101%) skewX(-12deg);opacity:.5}
 .proj-card>*{position:relative;z-index:1}
+.proj-card.featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+  gap:28px;align-items:center;min-height:390px;border-color:rgba(255,143,177,.32)}
+.proj-card.featured::after{content:"FEATURED CLOUD + SECURITY BUILD";position:absolute;right:24px;top:20px;
+  font-size:.64rem;font-weight:700;letter-spacing:.16em;color:var(--amber);opacity:.82}
+.proj-card.featured .project-copy{display:flex;min-width:0;flex-direction:column}
+.project-title-link{transition:color .3s}.project-title-link:hover{color:var(--pink)}
+.project-proof{display:grid;gap:9px;margin-top:16px}
+.project-proof li{position:relative;padding-left:20px;color:var(--muted);font-size:.84rem}
+.project-proof li::before{content:"✦";position:absolute;left:0;color:var(--amber)}
+.project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.project-link{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:9px 13px;
+  border:1px solid var(--line);background:rgba(255,143,177,.08);color:var(--cream);
+  font-size:.76rem;font-weight:600;transition:transform .3s var(--ease-bounce),border-color .3s,background .3s}
+.project-link:hover{transform:translateY(-3px);border-color:var(--pink);background:rgba(255,143,177,.16)}
+.project-link.primary{border-color:transparent;background:var(--haori);color:#fff;box-shadow:0 8px 24px rgba(255,94,147,.24)}
+.project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.project-shot{overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:var(--night);
+  box-shadow:0 16px 35px rgba(0,0,0,.28);transition:transform .35s var(--ease-bounce),border-color .35s}
+.project-shot:first-child{grid-column:1/-1}
+.project-shot:hover{transform:translateY(-5px);border-color:var(--pink)}
+.project-shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.project-shot figcaption{padding:8px 10px;color:var(--muted-2);font-size:.66rem;line-height:1.4}
 
 /* ---------- certifications ---------- */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:stretch}
@@ -428,6 +450,7 @@ footer .heart{color:var(--pink-bright)}
   .hero .tag{margin-left:auto;margin-right:auto}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-photo{max-width:340px;margin:0 auto}
+  .proj-card.featured{grid-template-columns:1fr}
 }
 @media (max-width:720px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
@@ -444,6 +467,11 @@ footer .heart{color:var(--pink-bright)}
 @media (max-width:420px){
   .photo-badge.b1{left:-2%}.photo-badge.b2{right:-2%}
   .hero-stats .stat b{font-size:1.4rem}
+  .proj-card.featured{padding:26px 20px}
+  .proj-card.featured::after{position:static;grid-column:1/-1;grid-row:1;margin-bottom:-12px}
+  .project-gallery{grid-template-columns:1fr}
+  .project-shot:first-child{grid-column:auto}
+  .project-links{display:grid;grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;
@@ -510,7 +538,7 @@ footer .heart{color:var(--pink-bright)}
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><b>6+</b><span>Featured Projects</span></div>
+        <div class="stat"><b>7+</b><span>Featured Projects</span></div>
         <div class="stat"><b>15+</b><span>Languages &amp; Tools</span></div>
         <div class="stat"><b>2026</b><span>Dip. Computer Eng.</span></div>
       </div>
@@ -665,44 +693,74 @@ footer .heart{color:var(--pink-bright)}
   <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Projects</span></span> I've Built</h2>
   <p class="section-intro reveal d2">A selection of academic and personal builds — spanning full-stack web, IoT and cloud.</p>
   <div class="proj-grid">
-    <article class="proj-card reveal">
+    <article class="proj-card featured reveal">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">Project · 01</div>
-      <h3><a href="https://github.com/HninPhyuPhyuAye/clinque" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Clinque ↗</a></h3>
-      <p>A cross-platform clinic journey and queue app with separate patient and nurse interfaces — live queue updates over realtime subscriptions, and authorisation enforced by PostgreSQL Row Level Security rather than the interface.</p>
-      <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span></div>
+      <div class="project-copy">
+        <div class="num">Featured · Project 01</div>
+        <h3><a class="project-title-link" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">TrustOps AI ↗</a></h3>
+        <p>A multi-tenant digital-resilience command centre that brings SRE reliability, SOC cyber monitoring, evidence-linked AI incident analysis and human-approved automation into one governed workflow.</p>
+        <ul class="project-proof" aria-label="TrustOps engineering evidence">
+          <li>Correlates operational and security signals across three isolated industry tenants.</li>
+          <li>Explains confidence, cited evidence and limitations before an authorised human decides.</li>
+          <li>Includes 19 tests, hardened Docker delivery, Trivy security gates and disabled-by-default AWS Terraform.</li>
+        </ul>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>SRE</span><span>SOC</span><span>AI Governance</span><span>Docker</span><span>Terraform</span></div>
+        <div class="project-links" aria-label="TrustOps project links">
+          <a class="project-link primary" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">View repository ↗</a>
+          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/blob/main/docs/AWS_ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
+          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/actions/workflows/ci.yml" target="_blank" rel="noopener">Passing CI ↗</a>
+        </div>
+      </div>
+      <div class="project-gallery" aria-label="TrustOps interface screenshots">
+        <a class="project-shot" href="assets/trustops-command-centre.png" target="_blank" rel="noopener">
+          <figure><img src="assets/trustops-command-centre.png" alt="TrustOps multi-tenant command centre" loading="lazy" /><figcaption>Multi-tenant command centre</figcaption></figure>
+        </a>
+        <a class="project-shot" href="assets/trustops-ai-investigation.png" target="_blank" rel="noopener">
+          <figure><img src="assets/trustops-ai-investigation.png" alt="TrustOps evidence-backed AI investigation" loading="lazy" /><figcaption>Evidence-backed AI analysis</figcaption></figure>
+        </a>
+        <a class="project-shot" href="assets/trustops-governed-automation.png" target="_blank" rel="noopener">
+          <figure><img src="assets/trustops-governed-automation.png" alt="TrustOps approval-controlled automation" loading="lazy" /><figcaption>Governed automation and verification</figcaption></figure>
+        </a>
+      </div>
     </article>
     <article class="proj-card reveal d1">
       <span class="slash"></span><span class="glow"></span>
       <div class="num">Project · 02</div>
-      <h3><a href="https://github.com/HninPhyuPhyuAye/supportdesk" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">SupportDesk ↗</a></h3>
-      <p>A full-stack IT support ticket platform with secure GitHub login, per-user access control, automated CI and a verified Terraform-managed AWS deployment.</p>
-      <div class="stack"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Terraform</span><span>AWS ECS</span></div>
+      <h3><a href="https://github.com/HninPhyuPhyuAye/clinque" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Clinque ↗</a></h3>
+      <p>A cross-platform clinic journey and queue app with separate patient and nurse interfaces — live queue updates over realtime subscriptions, and authorisation enforced by PostgreSQL Row Level Security rather than the interface.</p>
+      <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span></div>
     </article>
     <article class="proj-card reveal d2">
       <span class="slash"></span><span class="glow"></span>
       <div class="num">Project · 03</div>
-      <h3><a href="https://github.com/HninPhyuPhyuAye/SPPals" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">SP Pals ↗</a></h3>
-      <p>A centralised social-media application connecting students — profiles, posts and community feeds in one place.</p>
-      <div class="stack"><span>Full-Stack</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+      <h3><a href="https://github.com/HninPhyuPhyuAye/supportdesk" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">SupportDesk ↗</a></h3>
+      <p>A full-stack IT support ticket platform with secure GitHub login, per-user access control, automated CI and a verified Terraform-managed AWS deployment.</p>
+      <div class="stack"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Terraform</span><span>AWS ECS</span></div>
     </article>
     <article class="proj-card reveal d3">
       <span class="slash"></span><span class="glow"></span>
       <div class="num">Project · 04</div>
-      <h3><a href="https://github.com/HninPhyuPhyuAye/Cinechase" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">CineChase ↗</a></h3>
-      <p>A movie ticketing &amp; merchandise website with browsing, booking and an online store experience.</p>
-      <div class="stack"><span>Web App</span><span>HTML/CSS</span><span>JS</span><span>Database</span></div>
+      <h3><a href="https://github.com/HninPhyuPhyuAye/SPPals" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">SP Pals ↗</a></h3>
+      <p>A centralised social-media application connecting students — profiles, posts and community feeds in one place.</p>
+      <div class="stack"><span>Full-Stack</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
     </article>
     <article class="proj-card reveal d4">
       <span class="slash"></span><span class="glow"></span>
       <div class="num">Project · 05</div>
+      <h3><a href="https://github.com/HninPhyuPhyuAye/Cinechase" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">CineChase ↗</a></h3>
+      <p>A movie ticketing &amp; merchandise website with browsing, booking and an online store experience.</p>
+      <div class="stack"><span>Web App</span><span>HTML/CSS</span><span>JS</span><span>Database</span></div>
+    </article>
+    <article class="proj-card reveal d5">
+      <span class="slash"></span><span class="glow"></span>
+      <div class="num">Project · 06</div>
       <h3><a href="https://youtu.be/f3zkNs22oMY?si=0OLqf2NhBUPxEKJJ" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Smart Fan System ↗</a></h3>
       <p>A sustainable, sensor-controlled cooling system that adapts automatically to environmental conditions.</p>
       <div class="stack"><span>IoT</span><span>Arduino</span><span>Sensors</span><span>C++</span></div>
     </article>
     <article class="proj-card reveal d5">
       <span class="slash"></span><span class="glow"></span>
-      <div class="num">Project · 06</div>
+      <div class="num">Project · 07</div>
       <h3><a href="https://github.com/HninPhyuPhyuAye/Sensor-Risk-Identification-and-Proactive-Monitoring-System" target="_blank" rel="noopener" style="transition: color 0.3s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='inherit'">Risk Identification System ↗</a></h3>
       <p>An IoT monitoring solution with an interactive cloud dashboard for real-time risk detection and alerts.</p>
       <div class="stack"><span>IoT</span><span>AWS Cloud</span><span>Dashboard</span><span>Python</span></div>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hnin Phyu Phyu Aye · Computer Engineer</title>
-<meta name="description" content="Hnin Phyu Phyu Aye — Computer Engineering graduate from Singapore Polytechnic. Software, IoT & Cloud portfolio." />
+<meta name="description" content="Hnin Phyu Phyu Aye — Computer Engineering graduate interested in software engineering, analyst, project engineering, IoT and cloud roles." />
 <meta name="author" content="Hnin Phyu Phyu Aye" />
 <meta property="og:title" content="Hnin Phyu Phyu Aye · Computer Engineer" />
-<meta property="og:description" content="Software · IoT · Cloud — Computer Engineering graduate, Singapore Polytechnic." />
+<meta property="og:description" content="Software · Data · Project Engineering · IoT · Cloud — Computer Engineering graduate, Singapore Polytechnic." />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#16101a" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
@@ -288,23 +288,8 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
 @keyframes slashIn{to{transform:scaleX(1)}}
 
 /* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,64px);align-items:center}
-.about-photo{position:relative}
-.about-photo .frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 30px 70px rgba(0,0,0,.5);transform:rotate(-2deg);transition:transform .5s var(--ease-bounce)}
-.about-photo .frame img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.about-photo:hover .frame{transform:rotate(-1deg) scale(1.01)}
-.about-photo .frame2{position:absolute;bottom:-26px;right:-20px;width:47%;z-index:3;
-  padding:7px 7px 24px;border-radius:10px;background:#fff2f7;transform:rotate(5deg);
-  box-shadow:0 22px 50px rgba(0,0,0,.55);transition:transform .5s var(--ease-bounce)}
-.about-photo .frame2 img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}
-.about-photo:hover .frame2{transform:rotate(1.5deg) scale(1.05) translateY(-6px)}
-.about-photo .frame2-cap{position:absolute;left:0;right:0;bottom:5px;text-align:center;
-  font-family:'Poppins',sans-serif;font-size:.82rem;color:#c0356b}
-.about-photo .tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);
-  background:rgba(255,186,99,.25);border:1px solid rgba(255,186,99,.4);
-  padding:6px 22px;font-family:'Poppins',sans-serif;font-size:.9rem;color:var(--amber);
-  border-radius:4px;backdrop-filter:blur(2px)}
+.about-grid{display:block}
+.about-text{max-width:900px}
 .about-text p{color:var(--muted);margin-bottom:18px}
 .about-text strong{color:var(--cream);font-weight:600}
 .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
@@ -376,9 +361,8 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   opacity:.0;transition:transform .6s var(--ease-bounce);z-index:0;pointer-events:none;mix-blend-mode:overlay}
 .proj-card:hover .slash{transform:translateX(101%) skewX(-12deg);opacity:.5}
 .proj-card>*{position:relative;z-index:1}
-.proj-card.featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
-  gap:28px;align-items:center;min-height:390px;border-color:rgba(255,143,177,.32)}
-.proj-card.featured::after{content:attr(data-feature-label);position:absolute;right:24px;top:20px;
+.proj-card.featured{grid-column:1/-1;min-height:0;border-color:rgba(255,143,177,.32)}
+.proj-card.featured::before{content:attr(data-feature-label);position:absolute;right:24px;top:20px;
   font-size:.64rem;font-weight:700;letter-spacing:.16em;color:var(--amber);opacity:.82}
 .proj-card.featured .project-copy{display:flex;min-width:0;flex-direction:column}
 .project-title-link{transition:color .3s}.project-title-link:hover{color:var(--pink)}
@@ -391,13 +375,6 @@ nav.scrolled{background:rgba(20,13,24,.82);backdrop-filter:blur(14px);
   font-size:.76rem;font-weight:600;transition:transform .3s var(--ease-bounce),border-color .3s,background .3s}
 .project-link:hover{transform:translateY(-3px);border-color:var(--pink);background:rgba(255,143,177,.16)}
 .project-link.primary{border-color:transparent;background:var(--haori);color:#fff;box-shadow:0 8px 24px rgba(255,94,147,.24)}
-.project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.project-shot{overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:var(--night);
-  box-shadow:0 16px 35px rgba(0,0,0,.28);transition:transform .35s var(--ease-bounce),border-color .35s}
-.project-shot:first-child{grid-column:1/-1}
-.project-shot:hover{transform:translateY(-5px);border-color:var(--pink)}
-.project-shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.project-shot figcaption{padding:8px 10px;color:var(--muted-2);font-size:.66rem;line-height:1.4}
 
 /* ---------- certifications ---------- */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:stretch}
@@ -448,9 +425,6 @@ footer .heart{color:var(--pink-bright)}
   .hero-photo{order:-1}
   .hero-cta,.hero-stats,.eyebrow{justify-content:center}
   .hero .tag{margin-left:auto;margin-right:auto}
-  .about-grid{grid-template-columns:1fr;gap:40px}
-  .about-photo{max-width:340px;margin:0 auto}
-  .proj-card.featured{grid-template-columns:1fr}
 }
 @media (max-width:720px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
@@ -468,9 +442,7 @@ footer .heart{color:var(--pink-bright)}
   .photo-badge.b1{left:-2%}.photo-badge.b2{right:-2%}
   .hero-stats .stat b{font-size:1.4rem}
   .proj-card.featured{padding:26px 20px}
-  .proj-card.featured::after{position:static;grid-column:1/-1;grid-row:1;margin-bottom:-12px}
-  .project-gallery{grid-template-columns:1fr}
-  .project-shot:first-child{grid-column:auto}
+  .proj-card.featured::before{position:static;margin-bottom:14px}
   .project-links{display:grid;grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -499,7 +471,7 @@ footer .heart{color:var(--pink-bright)}
     <div class="ldr-ring"></div>
     <div class="ldr-ring r2"></div>
     <div class="ldr-title">Portfolio</div>
-    <div class="ldr-sub">Software · IoT · Cloud</div>
+    <div class="ldr-sub">Software · Data · IoT · Cloud</div>
     <div class="ldr-bar"><span></span></div>
     <div class="ldr-label">Loading experience</div>
   </div>
@@ -526,13 +498,13 @@ footer .heart{color:var(--pink-bright)}
 <header class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-copy">
-      <div class="hero-kicker">Software · IoT · Cloud Systems</div>
+      <div class="hero-kicker">Software · Data · IoT · Cloud Systems</div>
       <h1>
         <span class="l1">Hi, I'm</span>
         <span class="l2">Hnin Phyu Phyu Aye</span>
       </h1>
-      <div class="role">Computer Engineer · Software · IoT · Cloud</div>
-      <p class="tag">A Computer Engineering graduate from Singapore Polytechnic who builds across software, IoT and cloud — turning sensors, code and ideas into reliable systems with focus and care.</p>
+      <div class="role">Software Engineer · Analyst · Project Engineer</div>
+      <p class="tag">A Computer Engineering graduate from Singapore Polytechnic who builds across software, data, IoT and cloud — turning analysis, code and ideas into reliable systems with focus and care.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work ✦</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -561,22 +533,20 @@ footer .heart{color:var(--pink-bright)}
 <!-- about -->
 <section class="section" id="about">
   <div class="about-grid">
-    <div class="about-photo reveal">
-      <span class="tape">Focused systems builder</span>
-      <div class="frame"><img src="assets/pf-me.jpeg" alt="Hnin Phyu Phyu Aye portrait" /></div>
-    </div>
     <div class="about-text">
       <div class="eyebrow reveal">About Me <span class="accent">Profile</span></div>
       <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Engineer by craft,</span></span><br/>curious by nature.</h2>
       <p class="reveal d2">I'm a <strong>Computer Engineering graduate</strong> from Singapore Polytechnic with hands-on experience in software development, web applications, cloud technologies, IoT systems, and software–hardware integration.</p>
       <p class="reveal d3">From deploying industrial IoT sensors to building cloud, data and full-stack platforms, I love the moment where <strong>code meets the real world</strong>. I bring strong analytical thinking, attention to detail, and a fast-learner mindset to every system I touch.</p>
-      <p class="reveal d4">My focus areas: <strong>Software Engineering, Cloud Computing, Web Development, IT Infrastructure, Systems Engineering and IoT solutions.</strong></p>
+      <p class="reveal d4">I'm interested in <strong>Software Engineering, Analyst and Project Engineer roles</strong>, with focus areas spanning data analysis, cloud computing, web development, IT infrastructure, systems engineering and IoT solutions.</p>
       <div class="about-chips reveal d5">
         <span class="chip"><span class="em">🎓</span>Singapore Polytechnic</span>
         <span class="chip"><span class="em">📍</span>Singapore</span>
         <span class="chip"><span class="em">☁️</span>AWS Certified</span>
         <span class="chip"><span class="em">📱</span>Mobile Apps</span>
         <span class="chip"><span class="em">🤖</span>IoT &amp; Robotics</span>
+        <span class="chip"><span class="em">📊</span>Analyst Roles</span>
+        <span class="chip"><span class="em">🧩</span>Project Engineering</span>
       </div>
     </div>
   </div>
@@ -693,40 +663,10 @@ footer .heart{color:var(--pink-bright)}
   <h2 class="section-title reveal d1"><span class="slash-wrap"><span class="grad">Projects</span></span> I've Built</h2>
   <p class="section-intro reveal d2">A selection of academic and personal builds — spanning full-stack web, data engineering, machine learning, IoT and cloud.</p>
   <div class="proj-grid">
-    <article class="proj-card featured reveal" data-feature-label="FEATURED CLOUD + SECURITY BUILD">
+    <article class="proj-card featured reveal" data-feature-label="FEATURED DATA + ML PLATFORM">
       <span class="slash"></span><span class="glow"></span>
       <div class="project-copy">
         <div class="num">Featured · Project 01</div>
-        <h3><a class="project-title-link" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">TrustOps AI ↗</a></h3>
-        <p>A multi-tenant digital-resilience command centre that brings SRE reliability, SOC cyber monitoring, evidence-linked AI incident analysis and human-approved automation into one governed workflow.</p>
-        <ul class="project-proof" aria-label="TrustOps engineering evidence">
-          <li>Correlates operational and security signals across three isolated industry tenants.</li>
-          <li>Explains confidence, cited evidence and limitations before an authorised human decides.</li>
-          <li>Includes 19 tests, hardened Docker delivery, Trivy security gates and disabled-by-default AWS Terraform.</li>
-        </ul>
-        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>SRE</span><span>SOC</span><span>AI Governance</span><span>Docker</span><span>Terraform</span></div>
-        <div class="project-links" aria-label="TrustOps project links">
-          <a class="project-link primary" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">View repository ↗</a>
-          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/blob/main/docs/AWS_ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
-          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/actions/workflows/ci.yml" target="_blank" rel="noopener">Passing CI ↗</a>
-        </div>
-      </div>
-      <div class="project-gallery" aria-label="TrustOps interface screenshots">
-        <a class="project-shot" href="assets/trustops-command-centre.png" target="_blank" rel="noopener">
-          <figure><img src="assets/trustops-command-centre.png" alt="TrustOps multi-tenant command centre" loading="lazy" /><figcaption>Multi-tenant command centre</figcaption></figure>
-        </a>
-        <a class="project-shot" href="assets/trustops-ai-investigation.png" target="_blank" rel="noopener">
-          <figure><img src="assets/trustops-ai-investigation.png" alt="TrustOps evidence-backed AI investigation" loading="lazy" /><figcaption>Evidence-backed AI analysis</figcaption></figure>
-        </a>
-        <a class="project-shot" href="assets/trustops-governed-automation.png" target="_blank" rel="noopener">
-          <figure><img src="assets/trustops-governed-automation.png" alt="TrustOps approval-controlled automation" loading="lazy" /><figcaption>Governed automation and verification</figcaption></figure>
-        </a>
-      </div>
-    </article>
-    <article class="proj-card featured reveal d1" data-feature-label="FEATURED DATA + ML PLATFORM">
-      <span class="slash"></span><span class="glow"></span>
-      <div class="project-copy">
-        <div class="num">Featured · Project 02</div>
         <h3><a class="project-title-link" href="https://hninphyuphyuaye.github.io/FluxSG/" target="_blank" rel="noopener">FluxSG ↗</a></h3>
         <p>A production-grade Singapore mobility and haze platform joining LTA bus arrivals with NEA air quality, a tested analytics warehouse, guarded machine-learning forecasts and an explainable citizen commute signal.</p>
         <ul class="project-proof" aria-label="FluxSG engineering evidence">
@@ -742,16 +682,24 @@ footer .heart{color:var(--pink-bright)}
           <a class="project-link" href="https://github.com/HninPhyuPhyuAye/FluxSG/actions/workflows/ci.yml" target="_blank" rel="noopener">Passing CI ↗</a>
         </div>
       </div>
-      <div class="project-gallery" aria-label="FluxSG live interface screenshots">
-        <a class="project-shot" href="assets/fluxsg-live-dashboard.png" target="_blank" rel="noopener">
-          <figure><img src="assets/fluxsg-live-dashboard.png" alt="FluxSG live Singapore mobility and air-quality dashboard" loading="lazy" /><figcaption>Live transport and environmental intelligence</figcaption></figure>
-        </a>
-        <a class="project-shot" href="assets/fluxsg-haze-watch.png" target="_blank" rel="noopener">
-          <figure><img src="assets/fluxsg-haze-watch.png" alt="FluxSG regional haze map and saved alert threshold" loading="lazy" /><figcaption>Five-region haze watch and device alerts</figcaption></figure>
-        </a>
-        <a class="project-shot" href="assets/fluxsg-forecast-governance.png" target="_blank" rel="noopener">
-          <figure><img src="assets/fluxsg-forecast-governance.png" alt="FluxSG guarded forecast governance checks" loading="lazy" /><figcaption>Evidence-led forecast governance</figcaption></figure>
-        </a>
+    </article>
+    <article class="proj-card featured reveal d1" data-feature-label="FEATURED CLOUD + SECURITY BUILD">
+      <span class="slash"></span><span class="glow"></span>
+      <div class="project-copy">
+        <div class="num">Featured · Project 02</div>
+        <h3><a class="project-title-link" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">TrustOps AI ↗</a></h3>
+        <p>A multi-tenant digital-resilience command centre that brings SRE reliability, SOC cyber monitoring, evidence-linked AI incident analysis and human-approved automation into one governed workflow.</p>
+        <ul class="project-proof" aria-label="TrustOps engineering evidence">
+          <li>Correlates operational and security signals across three isolated industry tenants.</li>
+          <li>Explains confidence, cited evidence and limitations before an authorised human decides.</li>
+          <li>Includes 19 tests, hardened Docker delivery, Trivy security gates and disabled-by-default AWS Terraform.</li>
+        </ul>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>SRE</span><span>SOC</span><span>AI Governance</span><span>Docker</span><span>Terraform</span></div>
+        <div class="project-links" aria-label="TrustOps project links">
+          <a class="project-link primary" href="https://github.com/HninPhyuPhyuAye/TrustOps" target="_blank" rel="noopener">View repository ↗</a>
+          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/blob/main/docs/AWS_ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
+          <a class="project-link" href="https://github.com/HninPhyuPhyuAye/TrustOps/actions/workflows/ci.yml" target="_blank" rel="noopener">Passing CI ↗</a>
+        </div>
       </div>
     </article>
     <article class="proj-card reveal d1">
@@ -830,7 +778,7 @@ footer .heart{color:var(--pink-bright)}
 <section class="section contact" id="contact">
   <div class="eyebrow reveal" style="justify-content:center">Let's Connect <span class="accent">Contact</span></div>
   <h2 class="section-title reveal d1"><span class="grad">Let's build something together</span></h2>
-  <p class="contact-sub reveal d2">Open to software, IoT and cloud opportunities. Whether it's a project, a role or just a hello — my inbox is always open.</p>
+  <p class="contact-sub reveal d2">Open to software engineering, analyst, project engineering, IoT and cloud opportunities. Whether it's a project, a role or just a hello — my inbox is always open.</p>
   <div class="contact-grid">
     <a class="contact-card reveal" href="mailto:hninphyuphyuaye222@gmail.com">
       <div class="ic">✉️</div><div class="lab">Email</div><div class="val">hninphyuphyuaye222@gmail.com</div>
